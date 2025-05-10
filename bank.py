@@ -153,6 +153,9 @@ def create_customer():
     }
     save_customers()
 
+    record_transaction(account_number, "DEPOSIT", initial_balance)
+
+
 #  adding user login details to file
     with open(users_file, 'a') as file:
         file.write(f"{account_number},{username},{password}\n")
@@ -258,7 +261,7 @@ def transfer_money():
     print(f"Source account balance: {from_customer['balance']}")
     amount = input("Enter transfer amount: ")
     
-    if not amount.replace('.', '').isdigit() or float(amount) <= 0:
+    if not amount.isdigit() or float(amount) <= 0:
         print("Invalid amount!")
         return
     
