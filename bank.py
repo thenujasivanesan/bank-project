@@ -95,7 +95,7 @@ def customer_menu():
     print("3. Check Balance")
     print("4. Transaction History")
     print("5. Transfer Money")
-    print("5. Exit")
+    print("6. Exit")
 
 # login function for both admin and customers
 def login():
